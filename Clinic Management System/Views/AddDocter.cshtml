@@ -1,0 +1,75 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Clinic_Management_System.Models.AddDocter
+
+@{
+    ViewData["Title"] = "AddDocter";
+}
+@using (Html.BeginForm("Newdocdetails1", "Home", FormMethod.Post))
+{
+    <style>
+        body {
+            background-image: url("/image/medi2.jpg");
+            background-size: cover;
+        }
+    </style>
+    <body>
+        <img src="~/image/StoneClinicLogo.png" alt="Logoimg" align="right" height="100" width="100" />
+
+        <table>
+            @*<tr>
+            <td>DoctorID:</td>
+            <td>@Html.TextBoxFor(m => m.DoctorID)<br /></td>
+
+        </tr>*@
+            <tr>
+                <td>FirstName:</td>
+                <td>@Html.TextBoxFor(m => m.FirstName)<br /></td>
+            </tr>
+            <tr>
+                <td>LastName</td>
+                <td>@Html.TextBoxFor(m => m.LastName)</td>
+            </tr>
+            <tr>
+                <td>Sex:</td>
+                <td>
+                    <br /><br />
+                    @Html.RadioButtonFor(m => m.Gender, "male")male<br />
+                    @Html.RadioButtonFor(m => m.Gender, "female")female<br />
+                    @Html.RadioButtonFor(m => m.Gender, "others")others
+                    <br /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>Specialization:</td>
+                <td>
+                    <br />
+                    @Html.RadioButtonFor(m => m.Specialization, "General")General<br />
+                    @Html.RadioButtonFor(m => m.Specialization, "Internal Medicine")Internal Medicine<br />
+                    @Html.RadioButtonFor(m => m.Specialization, "Pediatrics")Pediatrics<br />
+                    @Html.RadioButtonFor(m => m.Specialization, "Orthopedics")Orthopedics<br />
+                    @Html.RadioButtonFor(m => m.Specialization, "Opthalmology")Opthalmology<br /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>VisitingHours</td>
+                <td>
+                    <br />
+                    @Html.RadioButtonFor(m => m.Visiting_Hours, "01:00PM-02:00PM")01:00PM-02:00PM<br />
+                    @Html.RadioButtonFor(m => m.Visiting_Hours, "02:00PM-03:00PM")02:00PM-03:00PM<br />
+                    @Html.RadioButtonFor(m => m.Visiting_Hours, "03:00PM-04:00PM")03:00PM-04:00PM<br /><br />
+                </td>
+            </tr>
+            <tr>
+            <td><input type="submit" value="Add" /></td>
+            <td>
+                <input type="submit" value="Home" asp-action="Home" asp-controller="Home" />
+            </td>
+            </tr>
+        </table>
+        @*<input type="submit" value="submit" />
+        <input type="submit" value="Home" asp-action="Home" asp-controller="Home" />*@
+
+    </body>
+        }

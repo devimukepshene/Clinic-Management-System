@@ -1,0 +1,46 @@
+﻿@model Clinic_Management_System.Models.login
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using (Html.BeginForm("IndexPage", "Home", FormMethod.Post))
+{
+    <style>
+        body {
+            background-image: url("/image/login.webp");
+            background-size: cover;
+        }
+    </style>
+    <body>
+        <img src="~/image/StoneClinicLogo.png" alt="Logoimg" align="right" height="100" width="100" />
+
+        <center><h1>Welcome to Stone-Clinic</h1></center><br />
+        <center><h3>Login</h3></center><br />
+
+
+
+
+        <table>
+            <tr>
+                <td>
+                    UserName:
+                </td>
+                <td>@Html.TextBoxFor(m => m.UserName)</td>
+            </tr>
+            <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    @Html.PasswordFor(m => m.Pasword)
+                </td>
+            </tr>
+        </table>
+        @*<input type="submit" value="Submit" asp-action="Home" asp-controller="Home" />*@
+
+
+       <input type="submit" value="Submit" />
+
+
+    </body>
+}
+

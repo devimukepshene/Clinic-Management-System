@@ -1,0 +1,35 @@
+﻿  @model Clinic_Management_System.Models.CancelAppointment
+  
+@{
+    ViewData["Title"] = "CancelAppointment";
+}
+@using (Html.BeginForm("CancelAppointment1", "Home", FormMethod.Post))
+{
+    <style>
+        body {
+            background-image: url("/image/Cancelappointment.webp");
+            background-size: cover;
+        }
+    </style>
+    <body>
+        <img src="~/image/StoneClinicLogo.png" alt="Logoimg" align="right" height="100" width="100" />
+        <table class="table" align="center">
+            <tr>
+                <td>PatientID</td>
+                <td>@Html.TextBoxFor(p => p.PatientID)<br /></td>
+            </tr>
+            <tr>
+                <td>VisitDate</td>
+                <td>@Html.TextBoxFor(p => p.VisitDate)<br /></td>
+            </tr>
+            <tr>
+            <td><input type="submit" value="delete" /></td>
+            <td>
+                <input type="submit" value="Home" asp-action="Home" asp-controller="Home" />
+            </td>
+            </tr>
+        </table>
+        @*<input type="submit" value="delete" />*@
+    </body>
+
+}

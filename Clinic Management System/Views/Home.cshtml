@@ -1,0 +1,96 @@
+﻿<!Doctype html>
+
+<style>
+    body {
+        background-image: url("/image/Home.jpg");
+        background-size: cover;
+    }
+</style>
+
+<body>
+    <center>
+        <h1>Welcome to Stone-Clinic</h1>
+        <img src="~/image/StoneClinicLogo.png" alt="Logoimg" align="right" height="100" width="100" />
+    </center>
+    <br />
+    <table class="table" align="center">
+        <tr>
+
+            <td>
+                @using (Html.BeginForm("AddDocter", "Home"))
+                {
+                    <input type="submit" value="AddDocter" />
+                }
+                <br />
+                <br />
+            </td>
+            <td>
+                @using (Html.BeginForm("AddPatient", "Home"))
+                {
+                    <input type="submit" value="AddPatient" />
+                }
+                <br />
+                <br />
+            </td>
+            <td>
+                @using (Html.BeginForm("Schedule", "Home"))
+                {
+                    <input type="submit" value="Schedule" />
+                }
+                <br />
+                <br />
+            </td>
+            <td>
+                @using (Html.BeginForm("CancelAppointment", "Home"))
+                {
+                    <input type="submit" value="CancelAppointment" />
+                }
+                <br />
+                <br />
+            </td>
+        </tr>
+        
+
+
+
+        
+        <tr>
+
+            <td>
+                @using (Html.BeginForm("Docterinfo", "Home"))
+                {
+                    <input type="submit" value="Docterinfo" />
+                }
+                <br />
+                <br />
+            </td>
+            <td>
+                @using (Html.BeginForm("Patientinfo", "Home"))
+                {
+                    <input type="submit" value="Patientinfo" />
+                }
+                <br />
+                <br />
+            </td>
+            <td>
+                @using (Html.BeginForm("Scheduleinfo", "Home"))
+                {
+                    <input type="submit" value="Scheduleinfo" />
+                }
+                <br />
+                <br />
+            </td>
+            <td>
+                @using (Html.BeginForm("Logout", "Home"))
+                {
+                    <input type="submit" value="Logout" />
+                }
+                <br />
+                <br />
+            </td>
+        </tr>
+    </table>
+</body>
+
+
+

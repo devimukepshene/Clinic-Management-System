@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Clinic_Management_System.Models.AddDocter>
+
+@{
+    ViewData["Title"] = "Docterinfo";
+}
+@using (Html.BeginForm("Docterinfo", "Home", FormMethod.Post))
+{
+    <style>
+        body {
+            background-image: url("/image/medi2.jpg");
+            background-size: cover;
+        }
+    </style>
+    <body>
+        <img src="~/image/StoneClinicLogo.png" alt="Logoimg" align="right" height="100" width="100" />
+        <table class="table" align="center">
+            <tr>
+                <th>
+                    @Html.DisplayName("DoctorID");
+                </th>
+                <th>
+                    @Html.DisplayName("FirstName");
+                </th>
+                <th>
+                    @Html.DisplayName("LastName");
+                </th>
+                <th>
+                    @Html.DisplayName("Sex");
+                </th>
+                <th>
+                    @Html.DisplayName("Specialization");
+                </th>
+                <th>
+                    @Html.DisplayName("VisitingHours");
+                </th>
+            </tr>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DocterID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Specialization)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Visiting_Hours)
+                        </td>
+                        
+                    </tr>
+                }
+            </tbody>
+            <tr>
+                <td>
+                    <input type="submit" value="Home" asp-action="Home" asp-controller="Home" />
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+}

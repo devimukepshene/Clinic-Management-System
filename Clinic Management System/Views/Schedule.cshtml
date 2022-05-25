@@ -1,0 +1,85 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Clinic_Management_System.Models.Schedule
+@using (Html.BeginForm("Scheduledetails", "Home", FormMethod.Post))
+{
+
+    @*@{ViewData["Title"] = "Schedule";
+        }*@
+
+
+    <style>
+        body {
+            background-image: url("/image/Schedule.jpg");
+            background-size: cover;
+        }
+    </style>
+    <body>
+        <center><h1>Schedule Details</h1></center><br />
+        <img src="~/image/StoneClinicLogo.png" alt="Logoimg" align="right" height="100" width="100" />
+        <hr />
+        <table class="table" align="center">
+            <tr>
+            <td>PatientID:</td>
+            <td>@Html.TextBoxFor(m => m.PatientID)<br /></td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.DisplayName("Specialization")
+                </td>
+                <td>
+                    <select name="Specialization">
+                        <option value="Select Specialization">Select Specialization</option>
+                        <option value="Dermatologist">Dermatologist</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Opthamology">Opthamology</option>
+
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="Docter">
+                        <option value="DocterName">DocterName</option>
+                        <option value="Chandrashekar">Chandrashekar</option>
+                        <option value="SuryaPrakash">SuryaPrakash</option>
+                        <option value="Navaneeth">Navaneeth</option>
+                        <option value="Karthickeyan">Karthickeyan</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayName("VisitDate")
+                </td>
+                <td>
+                    <input type="date" name="VisitDate" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayName("AppointmentTime")
+                </td>
+            <tr>
+
+                <td>
+                    <br />
+                    @Html.RadioButtonFor(m => m.AppointmentTime, "01:00PM-02:00PM")01:00PM-02:00PM<br />
+                    @Html.RadioButtonFor(m => m.AppointmentTime, "02:00PM-03:00PM")02:00PM-03:00PM<br />
+                    @Html.RadioButtonFor(m => m.AppointmentTime, "03:00PM-04:00PM")03:00PM-04:00PM<br /><br />
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Add" /></td>
+                <td><input type="submit" value="Home" asp-action="Home" asp-controller="Home" />
+                </td>
+            </tr>
+        </table>
+    </body>
+
+ }
